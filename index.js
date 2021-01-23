@@ -21,7 +21,7 @@ app.post('/', (req, res) => {
     id:req.body.id
   }
   db.collection('deneme').doc(req.body.id).set(data).then(()=>{
-    console.log('oldu bu is')
+    console.log('it works')
   })
 })
 
