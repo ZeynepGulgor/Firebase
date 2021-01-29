@@ -17,17 +17,18 @@ app.use('/api/note', require('./routes/api/notes'))
 app.post('/', (req, res) => {
   console.log(req.body)
   const data={
-    item:req.body.item,
-    id:req.body.id
+    temp:req.body.temp,
+    name:req.body.name,
+    heartrate:req.body.heartrate
   }
-  db.collection('deneme').doc(req.body.id).set(data).then(()=>{
+  db.collection('users').doc(req.body.name).set(data).then(()=>{
     console.log('it works')
   })
 })
 
 app.get('/', (req, res) => {
  
-  db.collection('deneme').doc('1').get().then((snap)=>{
+  db.collection('users').doc('Zeynep').get().then((snap)=>{
   res.send(snap.data())
   })
 })
