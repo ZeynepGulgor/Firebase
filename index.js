@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const port = process.env.PORT || 3000
 
-app.use('/api/note', require('./routes/api/notes'))
+//app.use('/api/note', require('./routes/api/notes'))
 
 
 app.post('/', (req, res) => {
